@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Client Creation</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
+</head>
+<body>
+    <div class="container">
+        <h1>Create a Client</h1>
+        <form action="clientForm" method="post">
+            <form action="#" method="post">
+            <p>Please fill in this form to create a client</p>
+            
+            <br>
+            <b>Name</b>
+            <br>
+            <input type="text" class="form-control" name="txtName" placeholder="Enter Name" required>
+            <br>
+            <b>Email</b>
+            <br>
+            <input type="text" class="form-control" name="txtEmail" placeholder="Enter Email" required>
+            <br>
+            <b>Address</b>
+            <br>
+            <input type="text" class="form-control" name="txtAddress" placeholder="Enter Address" required>
+            <br>
+            <b>Password</b>
+            <br>
+            <input type="password" class="form-control" name="txtPassword" placeholder="Enter Password" required>
+            <br>
+            <b>Repeat Password</b>
+            <br>
+            <input type="password" class="form-control" name="txtPassword" placeholder="Repeat Password" required>
+            <br>
+
+            <p>Create a Meeting Schedule</p>
+            <br>
+            <b>Meeting Topic</b>
+            <br>
+            <input type="text" name="txtName" placeholder="Enter Meeting Topic" required>
+            <br>
+            <b>Number of People</b>
+            <br>
+            <input type="text" name="txtName" placeholder="Enter Number of People" required>
+            <br>
+            <b>Start Time</b>
+            <input type="datetime-local" id="meeting-time" name="meeting-time" />
+            
+
+            <br>
+            <button type="submit">Register</button>
+            <!-- <input type="submit" value="Register" > -->
+        </form>
+       </div>
+</body>
+</html>

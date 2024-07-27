@@ -1,0 +1,34 @@
+CREATE DATABASE IF NOT EXISTS ClientMeetingDB;
+
+USE ClientMeetingDB;
+
+CREATE TABLE IF NOT EXISTS Clients (
+    ClientID INT AUTO_INCREMENT PRIMARY KEY,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
+    Email VARCHAR(100),
+    PhoneNumber VARCHAR(20),
+    Address VARCHAR(255),
+    City VARCHAR(50),
+    State VARCHAR(50),
+    ZipCode VARCHAR(10),
+    Country VARCHAR(50),
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS Meetings (
+    MeetingID INT AUTO_INCREMENT PRIMARY KEY,
+    MeetingDate DATETIME NOT NULL,
+    Subject VARCHAR(255) NOT NULL,
+    Location VARCHAR(255),
+    Notes TEXT,
+    CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS Clients_Meetings (
+    ClientID INT,
+    MeetingID INT,
+    PRIMARY KEY (ClientID, MeetingID),
+    FOREIGN KEY (ClientID) REFERENCES Clients(ClientID),
+    FOREIGN KEY (MeetingID) REFERENCES Meetings(MeetingID)
+);

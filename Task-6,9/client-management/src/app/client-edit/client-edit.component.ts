@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ClientService } from '../client.service';
-import { Client } from '../client.model';
+import { ClientService, Client } from '../client.service';
 
 @Component({
   selector: 'app-client-edit',
   templateUrl: './client-edit.component.html',
   styleUrls: ['./client-edit.component.css']
 })
-export class ClientEditComponent implements OnInit{
+export class ClientEditComponent implements OnInit {
   client: Client | undefined;
 
   constructor(
@@ -19,16 +18,13 @@ export class ClientEditComponent implements OnInit{
 
   ngOnInit(): void {
     const id = +this.route.snapshot.paramMap.get('id')!;
-    this.clientService.getClient(id).subscribe((data: Client) => {
-      this.client = data;
-    });
+    this.clientService.getClient(id).subscribe(client => this.client = client);
   }
 
   updateClient(): void {
     if (this.client) {
-      this.clientService.updateClient(this.client).subscribe(() => {
-        this.router.navigate(['/clients']);
-      });
+      this.clientService.updateClient(this.client);
+      this.router.navigate(['/client-list']);
     }
   }
 }

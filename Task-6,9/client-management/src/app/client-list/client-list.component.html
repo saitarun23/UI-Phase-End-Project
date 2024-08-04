@@ -1,0 +1,10 @@
+<h2>Client List</h2>
+<ul>
+  <li *ngFor="let client of clients">
+    {{ client.name }} - {{ client.email }} - {{ client.phone }}
+    <button [routerLink]="['/client-details', client.id]">View</button>
+    <button [routerLink]="['/client-edit', client.id]">Edit</button>
+    <button (click)="deleteClient(client.id)">Delete</button>
+  </li>
+</ul>
+<button [routerLink]="['/client-create']">Add New Client</button>

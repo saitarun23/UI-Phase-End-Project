@@ -1,7 +1,0 @@
-<h2>Clients</h2>
-<ul>
-  <li *ngFor="let client of clients">
-    <a [routerLink]="['/client', client.id]">{{ client.name }}</a>
-  </li>
-</ul>
-<a routerLink="/add-client">Add Client</a>
